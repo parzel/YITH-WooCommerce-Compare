@@ -91,15 +91,6 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
             // set coookiename
             if ( is_multisite() ) $this->cookie_name .= '_' . get_current_blog_id();
 
-            echo "\n";
-            echo "DEBUG";
-            echo "\n";
-            echo $_COOKIE[ $this->cookie_name];
-            echo "\n";
-            echo var_dump( maybe_unserialize( $_COOKIE[ $this->cookie_name ]));
-            echo "DEBUG";
-            echo "\n";
-
             // populate the list of products
             $this->products_list = isset( $_COOKIE[ $this->cookie_name ] ) ? json_decode( maybe_unserialize( $_COOKIE[ $this->cookie_name ] ) ) : array();
 
